@@ -38,82 +38,45 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      //      {
-      //        type: "basic",
-      //        description: "Disable CMD + Tab to force Hyper Key usage",
-      //        from: {
-      //          key_code: "tab",
-      //          modifiers: {
-      //            mandatory: ["left_command"],
-      //          },
-      //        },
-      //        to: [
-      //          {
-      //            key_code: "tab",
-      //          },
-      //        ],
-      //      },
+      {
+        type: "basic",
+        description: "Disable CMD + Tab to force Hyper Key usage",
+        from: {
+          key_code: "tab",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "tab",
+          },
+        ],
+      },
     ],
   },
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
-    ),
     // b = "B"rowse
     b: {
-      t: open("https://twitter.com"),
-      // Quarterly "P"lan
-      p: open("https://mxstbr.com/cal"),
-      y: open("https://news.ycombinator.com"),
       f: open("https://facebook.com"),
-      r: open("https://reddit.com"),
-      h: open("https://hashnode.com/draft"),
+      y: open("https://youtube.com"),
+      h: open("https://console-openshift-console.apps.fr01.paas.tech.orange/k8s/cluster/projects/disco-review"),
+      o: open("https://gitlab.tech.orange/disco/disco-oda-components/disco-order-orchestration/"),
+      j: open("https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=30337&projectKey=IPCEISCOOD#"),
+      j: open("https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=30337&projectKey=IPCEISCOOD#"),
     },
     // o = "Open" applications
     o: {
-      1: app("1Password"),
+      v: app("Visual Studio Code"),
       g: app("Google Chrome"),
-      c: app("Notion Calendar"),
-      v: app("Zed"),
-      d: app("Discord"),
-      s: app("Slack"),
-      e: app("Superhuman"),
-      n: app("Notion"),
       t: app("Terminal"),
-      // Open todo list managed via *H*ypersonic
-      h: open(
-        "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
-      ),
-      z: app("zoom.us"),
-      // "M"arkdown (Reflect.app)
-      m: app("Reflect"),
-      r: app("Reflect"),
       f: app("Finder"),
-      // "i"Message
-      i: app("Texts"),
-      p: app("Spotify"),
-      a: app("iA Presenter"),
-      // "W"hatsApp has been replaced by Texts
-      w: open("Texts"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
-      ),
+      i: app("intellij idea ce"),
+      m: app("microsoft teams"),
+      s: app("obsidian"),
+      b: app("bruno"),
+      a: app("vial"),
     },
-
-    // TODO: This doesn't quite work yet.
-    // l = "Layouts" via Raycast's custom window management
-    // l: {
-    //   // Coding layout
-    //   c: shell`
-    //     open -a "Visual Studio Code.app"
-    //     sleep 0.2
-    //     open -g "raycast://customWindowManagementCommand?position=topLeft&relativeWidth=0.5"
-
-    //     open -a "Terminal.app"
-    //     sleep 0.2
-    //     open -g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"
-    //   `,
-    // },
 
     // w = "Window" via rectangle.app
     w: {
@@ -133,7 +96,7 @@ const rules: KarabinerRules[] = [
       h: rectangle("left-half"),
       l: rectangle("right-half"),
       f: rectangle("maximize"),
-      u: {
+      comma: {
         description: "Window: Previous Tab",
         to: [
           {
@@ -142,7 +105,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      i: {
+      period: {
         description: "Window: Next Tab",
         to: [
           {
@@ -183,14 +146,14 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
-      u: {
+      period: {
         to: [
           {
             key_code: "volume_increment",
           },
         ],
       },
-      j: {
+      comma: {
         to: [
           {
             key_code: "volume_decrement",
@@ -226,6 +189,14 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      g: {
+        to: [
+          {
+            key_code: "spacebar",
+            modifiers: ["right_control"],
+          },
+        ],
+      },
       semicolon: {
         to: [
           {
@@ -233,28 +204,9 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      e: open(
-        `raycast://extensions/thomas/elgato-key-light/toggle?launchType=background`
-      ),
-      // "D"o not disturb toggle
-      d: open(
-        `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
-      ),
-      // "T"heme
-      t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
-      c: open("raycast://extensions/raycast/system/open-camera"),
-      // 'v'oice
-      v: {
-        to: [
-          {
-            key_code: "spacebar",
-            modifiers: ["left_option"],
-          },
-        ],
-      },
     },
 
-    // v = "moVe" which isn't "m" because we want it to be on the left hand
+    // v = "Vim motions"
     // so that hjkl work like they do in vim
     v: {
       h: {
@@ -289,67 +241,84 @@ const rules: KarabinerRules[] = [
       },
     },
 
-    // c = Musi*c* which isn't "m" because we want it to be on the left hand
-    c: {
-      p: {
-        to: [{ key_code: "play_or_pause" }],
+    // m = Microsoft teams
+    m: {
+      // go to messa(g)es tab
+      g: {
+        to: [{ key_code: "2", modifiers: ["right_command"] }],
       },
-      n: {
-        to: [{ key_code: "fastforward" }],
+      // go to calen(d)er tab
+      d: {
+        to: [{ key_code: "4", modifiers: ["right_command"] }]
       },
+      // go to (b)ell tab
       b: {
-        to: [{ key_code: "rewind" }],
+        to: [{ key_code: "1", modifiers: ["right_command"] }]
       },
-    },
+      // mu(t)e microphone when in a call
+      t: {
+        to: [{ key_code: "m", modifiers: ["right_shift", "right_command"] }]
+      },
+      // (c)all start
+      c: {
+        to: [{ key_code: "a", modifiers: ["left_option", "left_shift"] }]
+      },
+      // (a)ccept an incomming call
+      a: {
+        to: [{ key_code: "a", modifiers: ["left_shift", "right_command"] }]
+      },
+      // (r)eject an incomming call
+      r: {
+        to: [{ key_code: "d", modifiers: ["left_shift", "right_command"] }]
+      },
+      // (l)eave when inside a call
+      l: {
+        to: [{ key_code: "h", modifiers: ["left_shift", "right_command"] }]
+      },
+      // (l)eave when inside a call
+      s: {
+        to: [{ key_code: "e", modifiers: ["left_shift", "right_command"] }]
+      },
 
-    // r = "Raycast"
-    r: {
-      c: open("raycast://extensions/thomas/color-picker/pick-color"),
-      n: open("raycast://script-commands/dismiss-notifications"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-      ),
-      e: open(
-        "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-      ),
-      p: open("raycast://extensions/raycast/raycast/confetti"),
-      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
-      s: open("raycast://extensions/peduarte/silent-mention/index"),
-      h: open(
-        "raycast://extensions/raycast/clipboard-history/clipboard-history"
-      ),
-      1: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
-      ),
-      2: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
-      ),
-    },
-  }),
-  {
-    description: "Change Backspace to Spacebar when Minecraft is focused",
-    manipulators: [
-      {
-        type: "basic",
-        from: {
-          key_code: "delete_or_backspace",
-        },
-        to: [
-          {
-            key_code: "spacebar",
-          },
-        ],
-        conditions: [
-          {
-            type: "frontmost_application_if",
-            file_paths: [
-              "^/Users/mxstbr/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java$",
-            ],
-          },
-        ],
+      // "f"ind chat
+      f: {
+        to: [{ key_code: "e", modifiers: ["right_command"] }]
       },
-    ],
-  },
+    },
+    // d = "d"igits num pad style
+    d: {
+      m: {
+        to: [{ key_code: "1"}]
+      },
+      comma: {
+        to: [{ key_code: "2"}]
+      },
+      period: {
+        to: [{ key_code: "3"}]
+      },
+      j: {
+        to: [{ key_code: "4"}]
+      },
+      k: {
+        to: [{ key_code: "5"}]
+      },
+      l: {
+        to: [{ key_code: "6"}]
+      },
+      u: {
+        to: [{ key_code: "7"}]
+      },
+      i: {
+        to: [{ key_code: "8"}]
+      },
+      o: {
+        to: [{ key_code: "9"}]
+      },
+      spacebar: {
+        to: [{ key_code: "0"}]
+      },
+    },
+  })
 ];
 
 fs.writeFileSync(
