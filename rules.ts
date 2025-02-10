@@ -72,7 +72,7 @@ const rules: KarabinerRules[] = [
       f: app("Finder"),
       i: app("intellij idea ce"),
       m: app("microsoft teams"),
-      s: app("obsidian"),
+      e: app("microsoft outlook"),
       b: app("bruno"),
       a: app("vial"),
     },
