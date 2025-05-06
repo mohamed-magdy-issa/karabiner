@@ -248,7 +248,7 @@ const rules: KarabinerRules[] = [
       },
       // go to calen(d)er tab
       d: {
-        to: [{ key_code: "4", modifiers: ["right_command"] }]
+        to: [{ key_code: "3", modifiers: ["right_command"] }]
       },
       // go to (b)ell tab
       b: {
