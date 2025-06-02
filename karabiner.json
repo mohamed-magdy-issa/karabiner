@@ -212,10 +212,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=30337&projectKey=IPCEISCOOD#"
+                    "shell_command": "open https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=40960&projectKey=IPCEISCOOD"
                   }
                 ],
-                "description": "Open https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=30337&projectKey=IPCEISCOOD#",
+                "description": "Open https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=40960&projectKey=IPCEISCOOD",
                 "type": "basic",
                 "from": {
                   "key_code": "j",

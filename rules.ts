@@ -62,7 +62,7 @@ const rules: KarabinerRules[] = [
       y: open("https://youtube.com"),
       h: open("https://console-openshift-console.apps.fr01.paas.tech.orange/k8s/cluster/projects/disco-review"),
       o: open("https://gitlab.tech.orange/disco/disco-oda-components/disco-order-orchestration/"),
-      j: open("https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=30337&projectKey=IPCEISCOOD#"),
+      j: open("https://portail.agir.orange.com/secure/RapidBoard.jspa?rapidView=40960&projectKey=IPCEISCOOD"),
     },
     // o = "Open" applications
     o: {
