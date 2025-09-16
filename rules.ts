@@ -145,6 +145,13 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
+      m: {
+        to: [
+          {
+            key_code: "mute",
+          },
+        ],
+      },
       period: {
         to: [
           {

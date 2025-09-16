@@ -993,6 +993,29 @@
               {
                 "to": [
                   {
+                    "key_code": "mute"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "key_code": "volume_increment"
                   }
                 ],
