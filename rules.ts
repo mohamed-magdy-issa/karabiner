@@ -70,7 +70,7 @@ const rules: KarabinerRules[] = [
       g: app("Google Chrome"),
       t: app("Terminal"),
       f: app("Finder"),
-      i: app("intellij idea ce"),
+      i: app("intellij idea"),
       m: app("microsoft teams"),
       e: app("microsoft outlook"),
       b: app("bruno"),

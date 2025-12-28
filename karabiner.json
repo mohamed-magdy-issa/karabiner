@@ -402,10 +402,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'intellij idea ce.app'"
+                    "shell_command": "open -a 'intellij idea.app'"
                   }
                 ],
-                "description": "Open -a 'intellij idea ce.app'",
+                "description": "Open -a 'intellij idea.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "i",
